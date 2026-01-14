@@ -28,46 +28,126 @@ nav:
   #   - name: Google
   #     url: https://www.google.com
   menu:
+    # 本地导航 (Local Navigation)
+    本站:
+      文章归档: /archives/ || anzhiyu-icon-archive
+      分类目录: /categories/ || anzhiyu-icon-folder
+      标签云: /tags/
+
+    # 外部导航 (External Navigation)
+    书签/博客:
+      书签导航: https://sqdh.653827.xyz || anzhiyu-icon-bookmark
+      jsqdh: https://jsqdh.653827.xyz || anzhiyu-icon-bookmark
+      导航1: https://nav.baoge.wang/ || anzhiyu-icon-compass
+      导航2: https://dh.baoge.wang/ || anzhiyu-icon-compass
+      导航菜单: https://file.baoge.wang/%E6%96%87%E4%BB%B6%E5%A4%B9/%E5%AF%BC%E8%88%AA%E8%8F%9C%E5%8D%951 || anzhiyu-icon-compass
+      导航站: https://dhz.baoge.wang/ || anzhiyu-icon-compass
+      书签管理: https://file.baoge.wang/bkmk2 || anzhiyu-icon-bookmark
+      书签卡片: https://file.baoge.wang/%E6%96%87%E4%BB%B6%E5%A4%B9/sqkp || anzhiyu-icon-bookmark
+      发现导航: https://nav.653827.xyz/side || anzhiyu-icon-bookmark
+      我的书签: https://dfile.baoge.wang/sunpanel.html || anzhiyu-icon-bookmark
+      简约1: https://dfile.baoge.wang/%E7%AE%80%E7%BA%A6%E5%AF%BC%E8%88%AA1.html || anzhiyu-icon-compass
+      简约2: https://dfile.baoge.wang/%E7%AE%80%E7%BA%A62.html || anzhiyu-icon-compass
+      jianyue2: https://dfile.baoge.wang/jianyue2.html || anzhiyu-icon-compass
+
+   
+      Gridea博客: https://bk.baoge.wang/ || anzhiyu-icon-blog
+      XAMPP博客: https://xampp.baoge.wang/ || anzhiyu-icon-blog
+      RIN博客: https://blog.baoge.wang/ || anzhiyu-icon-blog
+      Notion博客: https://www.653827.xyz/ || anzhiyu-icon-blog
+      Astro博客: https://astro.baoge.wang/ || anzhiyu-icon-blog
+      1pages博客: https://ipages.baoge.x10.mx/ || anzhiyu-icon-blog
+      本地博客: https://dfile.baoge.wang/blog.html || anzhiyu-icon-blog
+      weblog: https://file.baoge.wang/%E6%95%99%E7%A8%8B/%E5%AF%86%E7%A0%81%E9%AA%8C%E8%AF%81%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7?linkData=ISduaSc%2FJ3JqfD14OzU3fThocnJvfiAnMSdzZnJqJz8nfGpncXRsJzEneWZ3bGp5WndxJz8nbXl5dXg%2FNDR8amdxdGwzZ2Z0bGozfGZzbDQnMSdqc2h3fnV5amlVZnh4fHR3aSc%2FJ2xreXFvQkJCJyM%3D || anzhiyu-icon-blog
+      黑猫博客: https://hm.baoge.wang/ || anzhiyu-icon-blog
+      CF-BLOG博客: https://cfblog.653827.xyz/ || anzhiyu-icon-blog
+      Blogger: https://baoge666.blogspot.com/ || anzhiyu-icon-blog
+
+    # 工具页
+    工具:
+      黑猫文件管理: https://file.baoge.wang || anzhiyu-icon-file
+      IP检测: https://file.baoge.wang/ipjc || anzhiyu-icon-tool
+      网址加速器: https://js.653827.xyz/ || anzhiyu-icon-tool
+      在线粘贴板: https://cp.653827.xyz/ || anzhiyu-icon-tool
+      跳转浏览器: https://tz.baoge.wang/ || anzhiyu-icon-tool
+      购销存: https://gxc.baoge.wang/ || anzhiyu-icon-tool
+      产存供销: https://ccgx.baoge.wang/ || anzhiyu-icon-tool
+      电报文件管理: https://cftg.653827.xyz/ || anzhiyu-icon-file
+      webp图床: https://b2.notpeppa.ggff.net/notpeppa || anzhiyu-icon-image
+      缩略图: https://file.baoge.wang/%E6%96%87%E4%BB%B6%E5%A4%B9/slt1 || anzhiyu-icon-image
+      链接检测面板: https://file.baoge.wang/lianjiejiance8
+      挪车码生成器一: https://ncewm.baoge.wang/
+      挪车码生成器二: https://dfile.baoge.wang/%E6%8C%AA%E8%BD%A6%E4%BA%8C%E7%BB%B4%E7%A0%81/%E6%8C%AA%E8%BD%A6%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8.html
+      xugou监控: https://xugou.653827.xyz/monitors || anzhiyu-icon-monitor
+      域名监控: https://ym.baoge.wang/ || anzhiyu-icon-monitor
+      VPS到期监控: https://vps.shorten.dpdns.org/ || anzhiyu-icon-monitor
+      续订通知: https://tz.653827.xyz/admin || anzhiyu-icon-monitor
+      网页分析: https://fx.baoge.wang || anzhiyu-icon-chart
+      书签页生成: https://file.baoge.wang/j2-h2 || anzhiyu-icon-bookmark
+      裁判文书网: https://wenshu.court.gov.cn/website/wenshu/181029CR4M5A62CH/index.html? || anzhiyu-icon-document
+      文本到图像: https://text.imageonline.co/cn/ || anzhiyu-icon-image
+      在线抠图: https://www.remove.bg/zh || anzhiyu-icon-image
+      HTML-W: https://h-w.baoge.wang/|| anzhiyu-icon-tool
+      Cron表达式: https://cron.qqe2.com/
+      Temp临时邮件: https://mail.tm/zh/ || anzhiyu-icon-mail
+
     
-    文章: # name
-      归档: /archives/ || fas fa-folder-closed # item name: link || icon
-      分类: /categories/ || fas fa-clone
-      标签: /tags/ || fas fa-tags
-    新闻:
+      彩虹工具箱: https://tool.cccyun.cc/ || anzhiyu-icon-toolbox
+      在线工具箱: https://tool.lu/ || anzhiyu-icon-toolbox
+      在线工具: https://toolonline.net/ || anzhiyu-icon-toolbox
+      即时工具: https://www.67tool.com/ || anzhiyu-icon-toolbox
+      仓鼠工具箱: https://www.hamstertools.org/zh || anzhiyu-icon-toolbox
+      锦时.工具箱: https://www.y3pm.com/ || anzhiyu-icon-toolbox
+      老朱工具箱: https://nav.ilaozhu.com/ || anzhiyu-icon-toolbox
+      帮小忙: https://tool.browser.qq.com/?ref=kui.li || anzhiyu-icon-toolbox
+      ImgURL: https://www.imgurl.org/vip/manage/upload || anzhiyu-icon-monitor
+      骤雨重山: https://wp-cdn.4ce.cn/ || anzhiyu-icon-monitor
+      Bilibili音乐: https://www.bilibili.com/video/BV1564y1m7Mu?spm_id_from=333.788.videopod.sections&vd_source=954e725e91c1c3621a8a51c91cb1da04 || anzhiyu-icon-monitor
+      微信读书: https://weread.qq.com/web/category/100000 || anzhiyu-icon-chart
+    # Markdown以及代码混淆
+    代码相关:
+      Tool On lion: https://toolonline.net/markdown || anzhiyu-icon-markdown
+      Arya: https://markdown.lovejade.cn/ || anzhiyu-icon-markdown
+      锤子在线: https://www.toolhelper.cn/Code/Markdown || anzhiyu-icon-markdown
+      在线工具: https://tool.lu/Markdown/ || anzhiyu-icon-markdown
+      HTML~MD: https://devtool.tech/html-md || anzhiyu-icon-markdown
+      Markdown 语法: https://markdown.com.cn/hacks.html#%E6%A6%82%E8%BF%B0 || anzhiyu-icon-markdown
+
+    
+      toolonline: https://toolonline.net/js-obfuscator || anzhiyu-icon-code
+      傲星工具箱: https://tool.aoaostar.com/code_js || anzhiyu-icon-code
+      Html加密: https://www.jb51.net/tools/html_jiami.htm || anzhiyu-icon-code
+      在线文本加密: https://tophix.com/zh-cn/development-tools/encrypt-text || anzhiyu-icon-code
+      Obfuscator1: https://javascriptobfuscator.com/Javascript-Obfuscator.aspx || anzhiyu-icon-code
+      Obfuscator2: https://obfuscator.io/ || anzhiyu-icon-code
+
+    # 其它菜单
+    其它菜单:
       每日早报: https://readhub.cn/daily || https://unavatar.io/readhub.cn
       新闻汇聚: https://xw.653827.xyz/ || https://s3.bmp.ovh/imgs/2025/04/06/e8efeb29eff52acb.png
-      每日简报: https://kui.li/news || https://unavatar.io/kui.li
-      懒人早报: https://lazybook.netlify.app/#/blog/morning?id=%e6%96%b0%e9%97%a9%e6%8a%a5 || https://unavatar.io/lazybook.netlify.app
       速热点: https://www.suredian.com/ || https://unavatar.io/www.suredian.com
-      
+      Feedly: https://feedly.com/i/my/me || https://unavatar.io/feedly.com
+      FOLO: https://app.follow.is/timeline/view-0/all/pending || https://unavatar.io/app.follow.is
       财经新闻: https://sina-news.vercel.app/ || https://s3.bmp.ovh/imgs/2025/04/16/73d944905f090a66.jpg
-
-    天气:
       泰安天气: https://www.qweather.com/weather/tai'an-101120801.html || https://s3.bmp.ovh/imgs/2025/04/11/cbbf91bbd2b4df69.png
       岱岳天气: https://tianqi.moji.com/weather/china/shandong/daiyue-district || https://s3.bmp.ovh/imgs/2025/04/16/b54015cf0979f19a.png
       泰安天气2: https://tianqi.qq.com/index.htm || https://unavatar.io/tianqi.qq.com
       天气君: https://waptianqi.tianqijun.com/weather1d/101120801/ || https://s3.bmp.ovh/imgs/2025/04/16/1e7a5f1f40584cde.png
-      
-    影院:
+      泰安天气卡片: https://file.baoge.wang/%E6%96%87%E4%BB%B6%E5%A4%B9/%E6%B3%B0%E5%AE%89%E5%B8%82%E5%A4%A9%E6%B0%94 || https://s3.bmp.ovh/imgs/2025/07/22/be89ef3aa00a9528.png
       LibreTV-ys: https://ys.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
       LibreTV: https://libretv.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
-      
-      MoonTV: https://ifxoxfrkkxhm.ap-northeast-1.clawcloudrun.com/ || https://nnypxrykegia.ap-northeast-1.clawcloudrun.com/favicon.ico
-      影视: https://vd.loc.cc/ || https://s3.bmp.ovh/imgs/2025/04/19/fa9b145465c4e90e.png
+      LibreTV-x: https://libretv-x.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
+      MoonTV: https://ifxoxfrkkxhm.ap-northeast-1.clawcloudrun.com/ || https://ifxoxfrkkxhm.ap-northeast-1.clawcloudrun.com/favicon.ico
+      vodg影视: https://vd.loc.cc/ || https://s3.bmp.ovh/imgs/2025/04/19/fa9b145465c4e90e.png
       老王电影: https://laowang.co/ || https://wp-cdn.4ce.cn/v2/D3rQsvy.jpeg
-
-    导航:
       彩虹工具网: https://tool.cccyun.cc/ || https://s3.bmp.ovh/imgs/2025/03/16/2499eb4888a8aa1a.png
-      网址导航: https://nav.baoge.wang/ || https://unavatar.io/navpage.pagex.top
-      书签导航: https://dh.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/07/06/4eefad659ac22401.webp
-      发布页: https://wang.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/07/23/dae93b237adc3a0d.png
-
-    AI:
+      懒人找资源: https://lazybook.netlify.app/#/blog/morning?id=%e6%96%b0%e9%97%bb%e6%97%a9%e6%8a%a5 || https://unavatar.io/lazybook.netlify.app
+      科技lion导航: https://dh.kejilion.pro/ || https://s3.bmp.ovh/imgs/2025/08/05/23a28e37262a1eb8.png
+      发布页: https://file.baoge.wang/%E6%95%99%E7%A8%8B/%E5%AF%86%E7%A0%81%E9%AA%8C%E8%AF%81%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7?linkData=ISduaSc%2FJ3JqfD1tIGtwcWpvaWtpbzknMSdzZnJqJz8n5Y%2BR5biD6aG1JzEneWZ3bGp5WndxJz8nbXl5dXg%2FNDR8ZnNsM2dmdGxqM3xmc2w0JzEnanNod351eWppVWZ4eHx0d2knPydsa3lxb0JCQicj || https://s3.bmp.ovh/imgs/2025/07/23/dae93b237adc3a0d.png
       AI导航: https://www.aidh.cn/ || https://s3.bmp.ovh/imgs/2025/04/16/1e7a5f1f40584cde.png
-      #AI工具箱: https://aiproducthome.top/ || https://s3.bmp.ovh/imgs/2025/04/16/bf5e7295d50e3148.png
+      高效问答: https://zaiwen.xueban.org.cn/chat/working-edition || https://s3.bmp.ovh/imgs/2025/08/18/8459910844365c47.webp
       AI仓库: https://ai-cangku.com/ || https://unavatar.io/ai-cangku.com
       LMarena: https://lmarena.ai/ || https://unavatar.io/lmarena.ai
-
     
   right:
     random: false
