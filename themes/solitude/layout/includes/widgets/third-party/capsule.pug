@@ -1,0 +1,7 @@
+if theme.capsule.enable
+  #nav-music
+    .nav-music-capsule
+      i.capsule-icon.fas.fa-music
+      span.capsule-text 音乐
+    if theme.capsule.server === 'netease'
+      meting-js(id=theme.capsule.id server=theme.capsule.server type=theme.capsule.type mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0" order="random" volume=theme.capsule.volume) 

@@ -1,0 +1,527 @@
+#nav-music
+  position: fixed
+  bottom: 20px
+  left: 20px
+  z-index: 9999
+  display: block
+  margin: 0
+  padding: 0
+  width: auto
+  height: auto
+  background: none
+  color: var(--efu-fontcolor)
+  border-radius: 0
+  transition: none
+  box-shadow: none
+  backdrop-filter: none
+  font-size: 15px
+  min-width: auto
+
+  .nav-music-capsule
+    display: none
+    align-items: center
+    gap: 6px
+    padding: 0 16px
+    font-weight: 600
+    font-size: 15px
+    letter-spacing: 1px
+    .capsule-icon
+      font-size: 18px
+      margin-right: 2px
+    .capsule-text
+      font-size: 15px
+      color: var(--efu-main)
+
+  &:hover
+    transform: none
+    box-shadow: none
+    background: none
+    color: var(--efu-fontcolor)
+
+  &.playing
+    box-shadow: none
+    background: none
+    color: var(--efu-fontcolor)
+
+  &.expanded
+    display: block
+
+  // 底部胶囊播放器
+  meting-js
+    .aplayer
+      width: calc(100vw - 40px) !important
+      min-width: calc(100vw - 40px) !important
+      max-width: calc(100vw - 40px) !important
+      position: fixed !important
+      bottom: 20px !important
+      left: 20px !important
+      z-index: 9998 !important
+      background: var(--efu-card-bg) !important
+      border: 1px solid var(--efu-border) !important
+      border-radius: 12px !important
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important
+      transition: all 0.3s ease !important
+      
+      // 收缩状态样式
+      &.collapsed
+        width: 60px !important
+        min-width: 60px !important
+        max-width: 60px !important
+        height: 60px !important
+        border-radius: 50% !important
+        overflow: hidden !important
+        
+        .aplayer-info,
+        .aplayer-controller,
+        .aplayer-bar-wrap,
+        .aplayer-time
+          display: none !important
+        
+        .aplayer-pic
+          display: block !important
+          width: 60px !important
+          height: 60px !important
+          border-radius: 50% !important
+          overflow: hidden !important
+          
+          img
+            width: 100% !important
+            height: 100% !important
+            object-fit: cover !important
+        
+        .collapse-btn
+          display: none !important
+        
+        .expand-btn
+          display: block !important
+          position: absolute !important
+          top: 50% !important
+          left: 50% !important
+          transform: translate(-50%, -50%) !important
+          font-size: 20px !important
+          color: #4caf50 !important
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important
+          cursor: pointer !important
+          z-index: 10000 !important
+          background: rgba(255, 255, 255, 0.9) !important
+          border-radius: 50% !important
+          width: 30px !important
+          height: 30px !important
+          display: flex !important
+          align-items: center !important
+          justify-content: center !important
+          transition: all 0.3s ease !important
+          
+          &::before
+            content: "▶" !important
+            color: #4caf50 !important
+            font-size: 14px !important
+            font-weight: bold !important
+            line-height: 1 !important
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important
+          
+          &:hover
+            background: rgba(255, 255, 255, 1) !important
+            transform: translate(-50%, -50%) scale(1.1) !important
+            box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4) !important
+      
+      // 播放器信息区域
+      .aplayer-info
+        width: 100% !important
+        display: flex !important
+        flex-direction: row !important
+        padding: 12px 12px !important
+        position: relative !important
+        align-items: center !important
+        gap: 12px !important
+        
+        // 封面图区域
+        .aplayer-pic
+          display: block !important
+          width: 60px !important
+          height: 60px !important
+          border-radius: 8px !important
+          overflow: hidden !important
+          flex-shrink: 0 !important
+          
+          img
+            width: 100% !important
+            height: 100% !important
+            object-fit: cover !important
+        
+        // 音乐信息区域
+        .aplayer-music
+          flex: 0 0 180px !important
+          min-width: 180px !important
+          margin-bottom: 0 !important
+          
+          .aplayer-title
+            max-width: 160px !important
+            overflow: hidden !important
+            text-overflow: ellipsis !important
+            white-space: nowrap !important
+            font-size: 14px !important
+            font-weight: 600 !important
+            line-height: 1.4 !important
+            margin-bottom: 4px !important
+            
+          .aplayer-author
+            max-width: 160px !important
+            overflow: hidden !important
+            text-overflow: ellipsis !important
+            white-space: nowrap !important
+            font-size: 12px !important
+            color: #666 !important
+            line-height: 1.4 !important
+        
+        // 控制按键区域
+        .aplayer-controller
+          flex: 1 !important
+          display: flex !important
+          flex-direction: row !important
+          align-items: center !important
+          justify-content: flex-start !important
+          padding: 0 !important
+          gap: 8px !important
+          border-top: none !important
+          min-width: 0 !important
+          margin-left: 20px !important
+          
+          // 播放控制按钮组
+          .aplayer-icon-play
+            display: inline-block !important
+            opacity: 1 !important
+            visibility: visible !important
+            cursor: pointer !important
+            margin: 0 4px !important
+            font-size: 16px !important
+            color: #333 !important
+            transition: all 0.3s ease !important
+            background: #f8f9fa !important
+            border-radius: 6px !important
+            padding: 8px !important
+            border: 1px solid #e9ecef !important
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important
+            min-width: 40px !important
+            text-align: center !important
+            
+            &:hover
+              color: #ff6b6b !important
+              transform: scale(1.1) !important
+              background: #fff5f5 !important
+              border-color: #ff6b6b !important
+              box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3) !important
+          
+          // 隐藏上一首和下一首按键
+          .aplayer-icon-back,
+          .aplayer-icon-forward
+            display: none !important
+          
+          // 播放模式按钮组
+          .aplayer-icon-order,
+          .aplayer-icon-loop,
+          .aplayer-icon-menu
+            display: inline-block !important
+            opacity: 1 !important
+            visibility: visible !important
+            cursor: pointer !important
+            margin: 0 4px !important
+            font-size: 14px !important
+            color: #333 !important
+            transition: all 0.3s ease !important
+            background: #f8f9fa !important
+            border-radius: 6px !important
+            padding: 6px !important
+            border: 1px solid #e9ecef !important
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important
+            min-width: 36px !important
+            text-align: center !important
+            
+            &:hover
+              color: #4caf50 !important
+              transform: scale(1.1) !important
+              background: #f1f8e9 !important
+              border-color: #4caf50 !important
+              box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3) !important
+      
+      // 音量控制区域 - 隐藏
+      .aplayer-volume-wrap
+        display: none !important
+        
+        .aplayer-volume-bar-wrap
+          display: block !important
+          opacity: 1 !important
+          width: 80px !important
+          
+          .aplayer-volume-bar
+            display: block !important
+            opacity: 1 !important
+            height: 12px !important
+            background: #e0e0e0 !important
+            border-radius: 6px !important
+            cursor: pointer !important
+            border: 2px solid #ccc !important
+            position: relative !important
+            transition: all 0.3s ease !important
+            
+            &:hover
+              border-color: #4ecdc4 !important
+              box-shadow: 0 2px 8px rgba(78, 205, 196, 0.3) !important
+            
+            .aplayer-volume
+              display: block !important
+              opacity: 1 !important
+              background: linear-gradient(90deg, #4ecdc4, #44a08d) !important
+              border-radius: 6px !important
+              height: 100% !important
+              transition: all 0.3s ease !important
+              
+            .aplayer-volume-thumb
+              display: block !important
+              opacity: 1 !important
+              background: #4ecdc4 !important
+              border-radius: 50% !important
+              width: 18px !important
+              height: 18px !important
+              top: -3px !important
+              box-shadow: 0 2px 8px rgba(78, 205, 196, 0.5) !important
+              border: 3px solid #fff !important
+              cursor: pointer !important
+              transition: all 0.3s ease !important
+              
+              &:hover
+                transform: scale(1.2) !important
+                box-shadow: 0 4px 12px rgba(78, 205, 196, 0.6) !important
+        
+        .aplayer-icon-volume-down,
+        .aplayer-icon-volume-up
+          display: inline-block !important
+          opacity: 1 !important
+          cursor: pointer !important
+          margin: 0 2px !important
+          font-size: 14px !important
+          color: #333 !important
+          background: #f8f9fa !important
+          border-radius: 6px !important
+          padding: 6px !important
+          border: 1px solid #e9ecef !important
+          transition: all 0.3s ease !important
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important
+          min-width: 32px !important
+          text-align: center !important
+          
+          &:hover
+            color: #4ecdc4 !important
+            background: #e8f5f4 !important
+            border-color: #4ecdc4 !important
+            transform: scale(1.1) !important
+            box-shadow: 0 4px 12px rgba(78, 205, 196, 0.3) !important
+            
+          &:active
+            transform: scale(0.95) !important
+      
+      // 进度条
+      .aplayer-bar-wrap
+        display: block !important
+        opacity: 1 !important
+        visibility: visible !important
+        margin: 0 12px 8px 12px !important
+        padding: 4px 0 !important
+        width: calc(100% - 120px) !important
+        max-width: 600px !important
+        
+        .aplayer-bar
+          display: block !important
+          opacity: 1 !important
+          height: 10px !important
+          background: #e0e0e0 !important
+          border-radius: 5px !important
+          cursor: pointer !important
+          border: 2px solid #ccc !important
+          position: relative !important
+          transition: all 0.3s ease !important
+          
+          &:hover
+            border-color: #4caf50 !important
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3) !important
+          
+          .aplayer-loaded
+            display: block !important
+            opacity: 1 !important
+            background: #f0f0f0 !important
+            border-radius: 5px !important
+            height: 100% !important
+            transition: all 0.3s ease !important
+            
+          .aplayer-played
+            display: block !important
+            opacity: 1 !important
+            background: linear-gradient(90deg, #4caf50, #45a049) !important
+            border-radius: 5px !important
+            height: 100% !important
+            transition: all 0.3s ease !important
+            
+            .aplayer-thumb
+              display: block !important
+              opacity: 1 !important
+              background: #4caf50 !important
+              border-radius: 50% !important
+              width: 18px !important
+              height: 18px !important
+              top: -4px !important
+              box-shadow: 0 2px 8px rgba(76, 175, 80, 0.5) !important
+              border: 3px solid #fff !important
+              cursor: pointer !important
+              transition: all 0.3s ease !important
+              
+              &:hover
+                transform: scale(1.2) !important
+                box-shadow: 0 4px 12px rgba(76, 175, 80, 0.6) !important
+      
+      // 时间显示
+      .aplayer-time
+        display: flex !important
+        opacity: 1 !important
+        visibility: visible !important
+        justify-content: center !important
+        font-size: 11px !important
+        color: #666 !important
+        margin: 0 0 8px 0 !important
+        font-weight: 500 !important
+        
+        .aplayer-ptime,
+        .aplayer-dtime
+          display: inline-block !important
+          opacity: 1 !important
+          margin: 0 10px !important
+      
+      // 收缩按钮
+      .collapse-btn
+        display: block !important
+        position: absolute !important
+        top: 8px !important
+        right: 16px !important
+        width: 24px !important
+        height: 24px !important
+        background: #4caf50 !important
+        color: white !important
+        border: none !important
+        border-radius: 50% !important
+        cursor: pointer !important
+        font-size: 12px !important
+        display: flex !important
+        align-items: center !important
+        justify-content: center !important
+        transition: all 0.3s ease !important
+        z-index: 10000 !important
+        
+        &::before
+          content: "−" !important
+          color: #fff !important
+          font-size: 16px !important
+          font-weight: bold !important
+          line-height: 1 !important
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important
+        
+        &:hover
+          background: #45a049 !important
+          transform: scale(1.1) !important
+          box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4) !important
+      
+      // 展开按钮
+      .expand-btn
+        display: none !important
+      
+      // 移动端适配
+      @media (max-width: 768px)
+        width: calc(100vw - 20px) !important
+        min-width: calc(100vw - 20px) !important
+        max-width: calc(100vw - 20px) !important
+        left: 10px !important
+        bottom: 10px !important
+        height: 60px !important
+        
+        .aplayer-info
+          padding: 8px 10px !important
+          gap: 8px !important
+          
+          .aplayer-pic
+            width: 50px !important
+            height: 50px !important
+            border-radius: 6px !important
+          
+          .aplayer-music
+            flex: 0 0 120px !important
+            min-width: 120px !important
+            
+            .aplayer-title
+              max-width: 110px !important
+              font-size: 13px !important
+              
+            .aplayer-author
+              max-width: 110px !important
+              font-size: 11px !important
+          
+          .aplayer-controller
+            gap: 6px !important
+            margin-left: 15px !important
+            
+            .aplayer-icon-play
+              font-size: 14px !important
+              margin: 0 2px !important
+              padding: 6px !important
+              min-width: 36px !important
+            
+            .aplayer-icon-back,
+            .aplayer-icon-forward
+              display: none !important
+            
+            .aplayer-icon-order,
+            .aplayer-icon-loop,
+            .aplayer-icon-menu
+              font-size: 12px !important
+              margin: 0 2px !important
+              padding: 5px !important
+              min-width: 32px !important
+        
+        .aplayer-volume-wrap
+          display: none !important
+          
+          .aplayer-volume-bar-wrap
+            width: 60px !important
+            
+            .aplayer-volume-bar
+              height: 10px !important
+              
+              .aplayer-volume-thumb
+                width: 16px !important
+                height: 16px !important
+                top: -3px !important
+          
+          .aplayer-icon-volume-down,
+          .aplayer-icon-volume-up
+            font-size: 12px !important
+            margin: 0 1px !important
+            padding: 5px !important
+            min-width: 28px !important
+        
+        .aplayer-bar-wrap
+          margin: 0 8px 6px 8px !important
+          width: calc(100% - 80px) !important
+          max-width: 400px !important
+          
+          .aplayer-bar
+            height: 8px !important
+            
+            .aplayer-thumb
+              width: 16px !important
+              height: 16px !important
+              top: -4px !important
+        
+        .aplayer-time
+          margin: 0 0 6px 0 !important
+          font-size: 10px !important
+          
+          .aplayer-ptime,
+          .aplayer-dtime
+            margin: 0 8px !important 

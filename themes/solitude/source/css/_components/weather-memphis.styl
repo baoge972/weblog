@@ -1,0 +1,149 @@
+.card-widget.card-weather-memphis
+  width: 100%
+  max-width: 340px
+  margin: 0 auto 16px auto
+  border-radius: 20px
+  overflow: hidden
+  padding: 16px 10px 16px 10px
+  position: relative
+  box-shadow: 8px 8px 0px #FF6B6B
+  border: 3px solid #000
+  background: #fff
+  font-family: 'Arial', sans-serif
+  .header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 10px
+    position: relative
+    z-index: 1
+    .location
+      font-size: 1rem
+      font-weight: bold
+      color: #073B4C
+      background: #FFD166
+      padding: 3px 8px
+      border-radius: 8px
+      border: 2px solid #000
+      box-shadow: 2px 2px 0px #000
+    .date-time
+      font-size: 0.8rem
+      color: #073B4C
+      background: #4ECDC4
+      padding: 3px 6px
+      border-radius: 6px
+      border: 2px solid #000
+    .refresh-btn
+      font-size: 1.1rem
+      color: #118AB2
+      background: #fff
+      border: 2px solid #000
+      border-radius: 50%
+      width: 26px
+      height: 26px
+      display: flex
+      align-items: center
+      justify-content: center
+      cursor: pointer
+      margin-left: 6px
+      transition: background 0.2s
+      &:hover
+        background: #E2F0CB
+  .main-info
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 6px
+    margin-bottom: 8px
+    flex-wrap: wrap
+    .weather-icon
+      font-size: 1.6rem
+      background: white
+      width: 32px
+      height: 32px
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 50%
+      border: 2px solid #000
+      box-shadow: 2px 2px 0px #000
+      font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif
+      font-style: normal !important
+      flex-shrink: 0
+    .temperature
+      font-size: 1.6rem
+      font-weight: bold
+      color: #073B4C
+      background: #FF6B6B
+      padding: 2px 6px
+      border-radius: 8px
+      border: 2px solid #000
+      box-shadow: 2px 2px 0px #000
+      display: inline-block
+      flex-shrink: 0
+      min-width: 80px
+      text-align: center
+    .weather-range
+      color: #073B4C
+      font-size: 0.8rem
+      font-weight: bold
+      background: #E2F0CB
+      padding: 2px 6px
+      border-radius: 6px
+      border: 2px solid #000
+      display: inline-block
+      flex-shrink: 0
+      min-width: 140px
+      text-align: center
+    .weather-desc
+      color: #073B4C
+      font-size: 0.85rem
+      font-weight: bold
+      background: #F4F1DE
+      padding: 2px 6px
+      border-radius: 6px
+      border: 2px solid #000
+      display: inline-block
+      flex-shrink: 0
+      min-width: 120px
+      text-align: center
+  .air-quality
+    margin-top: 6px
+    text-align: center
+    .air-quality-title
+      color: #073B4C
+      font-size: 0.9rem
+      font-weight: bold
+      background: #FF6B6B
+      display: inline-block
+      padding: 2px 6px
+      border-radius: 6px
+      border: 2px solid #000
+      box-shadow: 2px 2px 0px #000
+      min-width: 160px
+      text-align: center
+      
+      // 空气质量颜色样式
+      &.aqi-excellent
+        background: #4CAF50 !important  // 绿色 - 优
+        color: #fff !important
+      &.aqi-good
+        background: #8BC34A !important  // 浅绿色 - 良
+        color: #fff !important
+      &.aqi-moderate
+        background: #FFC107 !important  // 黄色 - 轻度污染
+        color: #000 !important
+      &.aqi-poor
+        background: #FF9800 !important  // 橙色 - 中度污染
+        color: #fff !important
+      &.aqi-very-poor
+        background: #F44336 !important  // 红色 - 重度污染
+        color: #fff !important
+      &.aqi-hazardous
+        background: #9C27B0 !important  // 紫色 - 严重污染
+        color: #fff !important
+.card-widget.card-weather-memphis .refresh-btn.spin
+  animation: spin 0.8s linear
+@keyframes spin
+  100%
+    transform: rotate(360deg)

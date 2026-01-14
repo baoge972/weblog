@@ -1,0 +1,433 @@
+- page.type = is_post() ? 'post' : page.type
+
+mixin katex
+  if theme.katex.copytex
+    script(src=url_for(theme.cdn.katex_copytex))
+      script.
+        (() => {
+          document.querySelectorAll('.article-container span.katex-display').forEach(item => {
+            utils.wrap(item, 'div', {class: 'katex-wrap'})
+          })
+        })();
+
+div
+  script(src=url_for(theme.cdn.utils))
+  script(src=url_for(theme.cdn.main))
+  script(src=url_for(theme.cdn.waterfall))
+  script(src=url_for(theme.cdn.pjax))
+
+  if theme.post.share.enable && theme.post.share.list && theme.post.share.list.includes('qrcode')
+    script(src=url_for(theme.cdn.qrcode))
+
+  if theme.mermaid
+    script(src=url_for(theme.cdn.mermaid_js))
+
+  if theme.chart
+    script(src=url_for(theme.cdn.chart_js))
+
+  if theme.typeit || typeof theme.hometop.banner.desc === 'object'
+    script(src=url_for(theme.cdn.typeit_js))
+
+  if theme.display_mode.universe
+    script(src=url_for(theme.cdn.universe_js))
+    script.
+      dark()
+
+  if theme.translate.enable
+    script(src=url_for(theme.cdn.translate_js))
+
+  if theme.katex && theme.katex.enable
+    if theme.katex.per_page && (is_post() || is_page())
+      +katex
+    else if page.katex
+      +katex
+
+  if theme.lazyload.enable
+    script(src=url_for(theme.cdn.lazyload))
+  script(src=url_for(theme.cdn.snackbar))
+  if theme.lightbox
+    if theme.mediumZoom
+      script(src=url_for(theme.cdn.medium_zoom))
+    if theme.fancybox
+      script(src=url_for(theme.cdn.fancyapps_ui))
+  if (theme.brevity.home_mini && theme.brevity.enable)
+    script(src=url_for(theme.cdn.swiper_js))
+
+  if theme.post.ai.enable
+    script(src=url_for(theme.cdn.post_ai))
+
+  if theme.capsule.enable || theme.music.enable || theme.brevity.enable && theme.brevity.music
+    script.
+      var meting_api = '!{theme.meting_api}';
+    script(src=url_for(theme.cdn.aplayer_js))
+    script(src=url_for(theme.cdn.meting_js))
+    
+    // 音乐播放器伸缩功能
+    if theme.capsule.enable
+      script(src=url_for('/js/music-player.js'))
+    
+  // 本地音乐播放器已移除
+
+  if theme.post.covercolor.enable
+    case theme.post.covercolor.mode
+      when 'local'
+        script(src=url_for(theme.cdn.color_thief))
+        script(src=url_for(theme.cdn.cover_local))
+      when 'api'
+        script.
+          const coverColorConfig = {
+            api: '!{theme.post.covercolor.api}',
+            time: !{theme.post.covercolor.time}
+          }
+        script(src=url_for(theme.cdn.cover_api))
+      when 'ave'
+        script.
+          const coverColorConfig = {
+            time: !{theme.post.covercolor.time}
+          }
+        script(src=url_for(theme.cdn.cover_ave))
+
+  if theme.loading.pace
+    include ../mixins/pace.pug
+
+  if theme.search.enable && theme.search.type === "algolia"
+    script(src=url_for(theme.cdn.instantsearch))
+    script(src=url_for(theme.cdn.algolia_search))
+
+  if theme.right_menu.enable
+    script(src=url_for(theme.cdn.right_menu_js))
+
+  if theme.extends.body
+    each item in theme.extends.body
+      != item
+
+
+
+  .js-pjax
+    if is_home() && theme.brevity.enable && theme.brevity.home_mini
+      script.
+        sco.initbbtalk()
+    if page.type === 'brevity' && theme.brevity.enable
+      script.
+        GLOBAL_CONFIG.lightbox && utils.lightbox(document.querySelectorAll(".bber-content-img img"));
+        sco.changeTimeFormat(document.querySelectorAll('.bber-info-time time'))
+    if comment_js
+      include ../widgets/third-party/comments/js
+    if theme.mermaid
+      script.
+        mermaid.run();
+
+    if theme.busuanzi && (theme.aside.siteinfo.uv || theme.aside.siteinfo.pv || is_post() && theme.post.meta.pv)
+      script(defer pjax src=url_for(theme.cdn.busuanzi_js))
+
+// 天气卡片JS
+script.
+  // 天气数据缓存和限制管理
+  const WEATHER_CACHE_KEY = 'taian_weather_cache';
+  const WEATHER_CACHE_DURATION = 30 * 60 * 1000; // 30分钟缓存
+  const MAX_REQUESTS_PER_DAY = 80; // 每天最多80次请求（留8次缓冲）
+  const REQUESTS_COUNT_KEY = 'weather_requests_count';
+  const REQUESTS_DATE_KEY = 'weather_requests_date';
+  
+  // 获取今天的日期字符串
+  function getTodayString() {
+      const today = new Date();
+      return today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+  }
+  
+  // 检查并更新请求计数
+  function checkAndUpdateRequestCount() {
+      const today = getTodayString();
+      const lastDate = localStorage.getItem(REQUESTS_DATE_KEY);
+      let count = parseInt(localStorage.getItem(REQUESTS_COUNT_KEY) || '0');
+      
+      // 如果是新的一天，重置计数
+      if (lastDate !== today) {
+          count = 0;
+          localStorage.setItem(REQUESTS_DATE_KEY, today);
+      }
+      
+      // 检查是否超过限制
+      if (count >= MAX_REQUESTS_PER_DAY) {
+          console.warn('今日API调用次数已达上限，使用缓存数据');
+          return false;
+      }
+      
+      // 更新计数
+      count++;
+      localStorage.setItem(REQUESTS_COUNT_KEY, count.toString());
+      console.log(`今日API调用次数: ${count}/${MAX_REQUESTS_PER_DAY}`);
+      return true;
+  }
+  
+  // 获取缓存的天气数据
+  function getCachedWeather() {
+      const cached = localStorage.getItem(WEATHER_CACHE_KEY);
+      if (!cached) return null;
+      
+      try {
+          const data = JSON.parse(cached);
+          const now = Date.now();
+          
+          // 检查缓存是否过期
+          if (now - data.timestamp < WEATHER_CACHE_DURATION) {
+              console.log('使用缓存的天气数据');
+              return data.weather;
+          }
+      } catch (e) {
+          console.error('解析缓存数据失败:', e);
+      }
+      return null;
+  }
+  
+  // 保存天气数据到缓存
+  function saveWeatherCache(weatherData) {
+      const cacheData = {
+          weather: weatherData,
+          timestamp: Date.now()
+      };
+      localStorage.setItem(WEATHER_CACHE_KEY, JSON.stringify(cacheData));
+      console.log('天气数据已缓存');
+  }
+  
+  function fetchWeather() {
+      console.log('开始获取天气数据...');
+      
+      // 首先尝试使用缓存
+      const cachedData = getCachedWeather();
+      if (cachedData) {
+          updateWeatherData(cachedData);
+          // 如果缓存数据较旧（超过10分钟），在后台更新数据
+          const cacheTimestamp = JSON.parse(localStorage.getItem(WEATHER_CACHE_KEY)).timestamp;
+          if (Date.now() - cacheTimestamp > 10 * 60 * 1000) {
+              console.log('缓存数据较旧，在后台更新...');
+              fetchWeatherFromAPI(true); // 静默更新
+          }
+          return;
+      }
+      
+      // 如果没有缓存，直接获取新数据
+      fetchWeatherFromAPI(false);
+  }
+  
+  function fetchWeatherFromAPI(silent = false) {
+      // 检查API调用限制
+      if (!checkAndUpdateRequestCount()) {
+          // 如果超过限制，尝试使用过期缓存
+          const expiredCache = localStorage.getItem(WEATHER_CACHE_KEY);
+          if (expiredCache) {
+              try {
+                  const data = JSON.parse(expiredCache);
+                  console.log('使用过期缓存数据（API调用已达上限）');
+                  updateWeatherData(data.weather);
+                  return;
+              } catch (e) {
+                  console.error('解析过期缓存失败:', e);
+              }
+          }
+          if (!silent) {
+              showError('今日API调用次数已达上限，请明天再试');
+          }
+          return;
+      }
+      
+      const token = "seyregrpl1dc1o60cudohsufiv2ciz";
+      const apiUrl = 'https://v3.alapi.cn/api/tianqi?token='+token+'&city=泰安';
+      
+      // 设置请求超时
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10秒超时
+      
+      fetch(apiUrl, { signal: controller.signal })
+          .then(response => {
+              clearTimeout(timeoutId);
+              if (!response.ok) {
+                  throw new Error('网络响应异常');
+              }
+              return response.json();
+          })
+          .then(data => {
+              console.log('天气数据获取成功:', data);
+              if (data.success) {
+                  saveWeatherCache(data.data);
+                  updateWeatherData(data.data);
+              } else {
+                  if (!silent) {
+                      showError('获取天气数据失败');
+                  }
+              }
+          })
+          .catch((error) => {
+              clearTimeout(timeoutId);
+              console.error('请求天气数据出错:', error);
+              if (!silent) {
+                  showError('请求天气数据出错');
+              }
+              // 如果是首次加载且没有缓存，尝试使用默认数据
+              if (!localStorage.getItem(WEATHER_CACHE_KEY)) {
+                  showDefaultWeather();
+              }
+          });
+  }
+  
+  function showDefaultWeather() {
+      console.log('显示默认天气数据');
+      const now = new Date();
+      const defaultData = {
+          city: '泰安',
+          date: now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0'),
+          update_time: now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0'),
+          temp: '--',
+          weather: '数据加载中...',
+          min_temp: '--',
+          max_temp: '--',
+          weather_code: 'yin',
+          aqi: { air: '--', air_level: '--' }
+      };
+      updateWeatherData(defaultData);
+  }
+  
+  function updateWeatherData(data) {
+      console.log('开始更新天气数据...');
+      const locationEl = document.querySelector('.card-weather-memphis .location');
+      const dateTimeEl = document.querySelector('.card-weather-memphis .date-time');
+      const tempEl = document.querySelector('.card-weather-memphis .temperature');
+      const weatherNowEl = document.querySelector('.card-weather-memphis .weather-now');
+      const weatherRangeEl = document.querySelector('.card-weather-memphis .weather-range');
+      const aqiEl = document.querySelector('.card-weather-memphis .air-quality-title');
+      
+      if (locationEl) locationEl.textContent = data.city;
+      if (dateTimeEl) dateTimeEl.textContent = data.date + ' ' + data.update_time.split(' ')[1];
+      if (tempEl) tempEl.textContent = data.temp + '°C';
+      if (weatherRangeEl) weatherRangeEl.textContent = '今日: ' + data.min_temp + '°C - ' + data.max_temp + '°C';
+      if (weatherNowEl) weatherNowEl.textContent = '当前天气: ' + data.weather;
+      if (aqiEl) {
+          aqiEl.textContent = '空气质量 [AQI: ' + data.aqi.air + ' - ' + data.aqi.air_level + ']';
+          // 根据空气质量等级设置颜色
+          updateAQIColor(aqiEl, data.aqi.air_level);
+      }
+      
+      updateWeatherIcon(data.weather_code);
+      console.log('天气数据更新完成');
+  }
+  
+  function updateAQIColor(aqiEl, airLevel) {
+      // 移除之前的颜色类
+      aqiEl.classList.remove('aqi-excellent', 'aqi-good', 'aqi-moderate', 'aqi-poor', 'aqi-very-poor', 'aqi-hazardous');
+      
+      // 根据空气质量等级设置颜色
+      switch(airLevel) {
+          case '优':
+              aqiEl.classList.add('aqi-excellent');
+              break;
+          case '良':
+              aqiEl.classList.add('aqi-good');
+              break;
+          case '轻度污染':
+              aqiEl.classList.add('aqi-moderate');
+              break;
+          case '中度污染':
+              aqiEl.classList.add('aqi-poor');
+              break;
+          case '重度污染':
+              aqiEl.classList.add('aqi-very-poor');
+              break;
+          case '严重污染':
+              aqiEl.classList.add('aqi-hazardous');
+              break;
+          default:
+              // 默认颜色（保持原来的红色）
+              break;
+      }
+  }
+  
+  function updateWeatherIcon(weatherCode) {
+      let icon = '&#9729;&#65039;';
+      switch(weatherCode) {
+          case 'qing': icon = '&#9728;&#65039;'; break;
+          case 'duoyun': icon = '&#9925;'; break;
+          case 'yin': icon = '&#9729;&#65039;'; break;
+          case 'yu':
+          case 'xiaoyu': icon = '&#127783;&#65039;'; break;
+          case 'dayu': icon = '&#127783;&#65039;'; break;
+          case 'xue': icon = '&#10052;&#65039;'; break;
+          case 'mai': icon = '&#127787;&#65039;'; break;
+      }
+      const iconEl = document.querySelector('.card-weather-memphis .weather-icon');
+      if (iconEl) iconEl.innerHTML = icon;
+  }
+  
+  function showError(msg) {
+      console.error('显示错误信息:', msg);
+      const tempEl = document.querySelector('.card-weather-memphis .temperature');
+      const weatherNowEl = document.querySelector('.card-weather-memphis .weather-now');
+      const weatherRangeEl = document.querySelector('.card-weather-memphis .weather-range');
+      const aqiEl = document.querySelector('.card-weather-memphis .air-quality-title');
+      
+      if (tempEl) tempEl.textContent = '--';
+      if (weatherRangeEl) weatherRangeEl.textContent = '';
+      if (weatherNowEl) weatherNowEl.textContent = msg;
+      if (aqiEl) {
+          aqiEl.textContent = '';
+          // 重置颜色
+          aqiEl.classList.remove('aqi-excellent', 'aqi-good', 'aqi-moderate', 'aqi-poor', 'aqi-very-poor', 'aqi-hazardous');
+      }
+  }
+  
+  // 立即初始化天气卡片
+  function initWeatherCard() {
+      console.log('开始初始化天气卡片...');
+      
+      // 显示今日API使用情况
+      const today = getTodayString();
+      const lastDate = localStorage.getItem(REQUESTS_DATE_KEY);
+      let count = parseInt(localStorage.getItem(REQUESTS_COUNT_KEY) || '0');
+      if (lastDate !== today) {
+          count = 0;
+      }
+      console.log(`今日API调用次数: ${count}/${MAX_REQUESTS_PER_DAY}`);
+      
+      // 立即显示默认数据，然后获取真实数据
+      showDefaultWeather();
+      
+      // 延迟一点时间再获取真实数据，确保DOM已完全加载
+      setTimeout(() => {
+          fetchWeather();
+      }, 100);
+      
+      // 设置刷新按钮事件
+      var btn = document.querySelector('.card-weather-memphis .refresh-btn');
+      if(btn) {
+          btn.addEventListener('click', function(){
+              console.log('刷新按钮被点击');
+              btn.classList.add('spin');
+              fetchWeather();
+              setTimeout(()=>btn.classList.remove('spin'), 800);
+          });
+      } else {
+          console.error('未找到刷新按钮');
+      }
+  }
+  
+  // 在DOM加载完成后立即初始化
+  if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initWeatherCard);
+  } else {
+      // DOM已经加载完成，立即初始化
+      initWeatherCard();
+  }
+  
+  // 为了兼容pjax，在页面切换时重新初始化
+  document.addEventListener('pjax:complete', function() {
+      console.log('pjax完成，重新初始化天气卡片...');
+      setTimeout(initWeatherCard, 50);
+  });
+
+if theme.footer.randomlink
+  include ../widgets/randomlink.pug
+
+// pjax
+!= partial("includes/widgets/third-party/pjax", {}, {cache: true})
+
+// google adsense
+include ../body/gadsense

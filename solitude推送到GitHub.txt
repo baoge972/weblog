@@ -1,0 +1,42 @@
+# 博客推送快速参考
+
+## 快速推送命令（一键复制）
+
+```bash
+git add .
+git commit -m "Update"
+git push origin main
+```
+
+**点击上方代码块右上角的复制按钮即可复制完整命令**
+
+## 标准Git推送流程
+
+### 完整命令
+```bash
+git add .
+git commit -m "Update blog config"
+git push origin main
+```
+
+### 分步执行
+```bash
+# 1. 添加文件
+git add .
+
+# 2. 提交
+git commit -m "Update blog config"
+
+# 3. 推送
+git push origin main
+```
+
+### 检查状态
+```bash
+git status
+```
+
+## 推送成功后
+- 代码推送到GitHub
+- Cloudflare Pages自动重新部署
+- 博客更新最新配置

@@ -1,0 +1,258 @@
+# ---------------------------
+# Hexo Theme Solitude
+# Author: Ever Fu
+# Github: https://github.com/everfu/hexo-theme-solitude
+#
+# Guide: https://solitude.js.org
+# You can get more detailed help from the guide
+# 指南：https://solitude.js.org
+# 你可以从指南中获取更详细的帮助
+#
+# sponsor: https://ko-fi.com/everfu
+# 赞助：https://afdian.com/a/everfu
+# ---------------------------
+
+### Basic configuration
+
+# --------------------------- 网站信息 start ---------------------------
+site:
+  name:
+    class: text
+    custom: 宝哥博客
+  icon: https://pan.811520.xyz/2024-10/1728197294016.webp
+# --------------------------- 网站信息 end ---------------------------
+
+# --------------------------- 导航栏 start ---------------------------
+nav:
+  # group:
+  #   - name: Google
+  #     url: https://www.google.com
+  menu:
+    
+    文章: # name
+      归档: /archives/ || fas fa-folder-closed # item name: link || icon
+      分类: /categories/ || fas fa-clone
+      标签: /tags/ || fas fa-tags
+    新闻:
+      每日早报: https://readhub.cn/daily || https://unavatar.io/readhub.cn
+      新闻汇聚: https://xw.653827.xyz/ || https://s3.bmp.ovh/imgs/2025/04/06/e8efeb29eff52acb.png
+      每日简报: https://kui.li/news || https://unavatar.io/kui.li
+      懒人早报: https://lazybook.netlify.app/#/blog/morning?id=%e6%96%b0%e9%97%a9%e6%8a%a5 || https://unavatar.io/lazybook.netlify.app
+      速热点: https://www.suredian.com/ || https://unavatar.io/www.suredian.com
+      
+      财经新闻: https://sina-news.vercel.app/ || https://s3.bmp.ovh/imgs/2025/04/16/73d944905f090a66.jpg
+
+    天气:
+      泰安天气: https://www.qweather.com/weather/tai'an-101120801.html || https://s3.bmp.ovh/imgs/2025/04/11/cbbf91bbd2b4df69.png
+      岱岳天气: https://tianqi.moji.com/weather/china/shandong/daiyue-district || https://s3.bmp.ovh/imgs/2025/04/16/b54015cf0979f19a.png
+      泰安天气2: https://tianqi.qq.com/index.htm || https://unavatar.io/tianqi.qq.com
+      天气君: https://waptianqi.tianqijun.com/weather1d/101120801/ || https://s3.bmp.ovh/imgs/2025/04/16/1e7a5f1f40584cde.png
+      
+    影院:
+      LibreTV-ys: https://ys.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
+      LibreTV: https://libretv.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
+      
+      MoonTV: https://ifxoxfrkkxhm.ap-northeast-1.clawcloudrun.com/ || https://nnypxrykegia.ap-northeast-1.clawcloudrun.com/favicon.ico
+      影视: https://vd.loc.cc/ || https://s3.bmp.ovh/imgs/2025/04/19/fa9b145465c4e90e.png
+      老王电影: https://laowang.co/ || https://wp-cdn.4ce.cn/v2/D3rQsvy.jpeg
+
+    导航:
+      彩虹工具网: https://tool.cccyun.cc/ || https://s3.bmp.ovh/imgs/2025/03/16/2499eb4888a8aa1a.png
+      网址导航: https://nav.baoge.wang/ || https://unavatar.io/navpage.pagex.top
+      书签导航: https://dh.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/07/06/4eefad659ac22401.webp
+      发布页: https://wang.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/07/23/dae93b237adc3a0d.png
+
+    AI:
+      AI导航: https://www.aidh.cn/ || https://s3.bmp.ovh/imgs/2025/04/16/1e7a5f1f40584cde.png
+      #AI工具箱: https://aiproducthome.top/ || https://s3.bmp.ovh/imgs/2025/04/16/bf5e7295d50e3148.png
+      AI仓库: https://ai-cangku.com/ || https://unavatar.io/ai-cangku.com
+      LMarena: https://lmarena.ai/ || https://unavatar.io/lmarena.ai
+
+    
+  right:
+    random: false
+    custom: []
+# --------------------------- 导航栏 end ---------------------------
+
+# --------------------------- 首页顶部 start ---------------------------
+hometop:
+  enable: false
+  banner:
+    title: 宁静致远 <br> 热爱生活
+    url: Hexo Theme Solitude
+    icon:
+      HTML:
+        img: https://i.postimg.cc/vBWVnY8q/html.png
+        color: "#e9572b"
+      JS:
+        img: https://i.postimg.cc/3N10Ltv2/js.png
+        color: "#f7cb4f"
+      Docker:
+        img: https://i.postimg.cc/8Pk6Fg24/docker.png
+        color: "#57b6e6"
+      Flutter:
+        img: https://i.postimg.cc/hPC7T3gB/flutter.png
+        color: "#ffffff"
+      WebPack:
+        img: https://i.postimg.cc/dVLZBmtT/webpack.png
+        color: "#2e3a41"
+      Git:
+        img: https://i.postimg.cc/nhgjwjCS/git.png
+        color: "#df5b40"
+  group:
+    热门: /tags/文章/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
+  recommendList:
+    sup: 置顶
+    title: Solitude 官方文档
+    url: https://solitude.js.org/
+    img: https://pan.811520.xyz/2024-10/1728279557702.webp
+    color: "none"
+carousel: false
+# --------------------------- 首页顶部 end ---------------------------
+
+# --------------------------- 侧边栏 start ---------------------------
+aside:
+  home:
+    noSticky: "about"
+    Sticky: "allInfo"
+  post:
+    noSticky: "about"
+    Sticky: "newestPost"
+  page:
+    noSticky: "about"
+    Sticky: "newestPost,allInfo"
+  position: 1
+  siteinfo:  # 侧边栏站点信息配置
+    postcount: true    # 文章总数
+    pv: false          # 总访问量 (暂时禁用以避免错误)
+    uv: false          # 总访客数 (暂时禁用以避免错误)
+    runtimeenable: true  # 建站天数显示
+    runtime: "2023-04-20"  # 建站时间
+    updatetime: true   # 最后更新时间
+    wordcount: true    # 站点总字数
+# --------------------------- 侧边栏 end ---------------------------
+
+# --------------------------- 页面默认设置 start ---------------------------
+page:
+  error: true
+  tags: true
+  categories: true
+  archives: 0
+  default:
+    cover:
+# --------------------------- 页面默认设置 end ---------------------------
+
+# --------------------------- 文章默认设置 start ---------------------------
+post:
+  default:
+    top_cover: true
+    cover:
+    locate: China,hubei
+    copyright:
+      enable: true
+      author:
+        url: /about/
+        img:
+      license: CC BY-NC-SA 4.0
+      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh
+  meta:
+    date: true
+    updated: true
+    locate: false
+    wordcount: true
+    readtime: true
+    pv: true
+    comment: true
+  award:
+    enable: false
+    appreciators: /about/
+    title:
+    desc:
+    list:
+  share:
+    enable: true
+    list:
+      - qq
+      - weibo
+      - twitter
+      - facebook
+      - telegram
+      - link
+      - qrcode
+  rss: /atom.xml
+  covercolor:
+    enable: false
+    mode: local
+    api: https://api.qjqq.cn/api/Imgcolor?img=
+    time: 43200000
+  footer:
+    enable: false
+    desc:
+    button:
+      enable: true
+      name:
+      url: /about/
+# --------------------------- 文章默认设置 end ---------------------------
+
+# --------------------------- 主题颜色 start ---------------------------
+theme_color:
+  dark: "#ffc848"
+  light: "#425AEF"
+# --------------------------- 主题颜色 end ---------------------------
+
+# --------------------------- 显示模式 start ---------------------------
+display_mode:
+  type: auto
+  universe: false
+# --------------------------- 显示模式 end ---------------------------
+
+# --------------------------- 字体 start ---------------------------
+font:
+  font-size: 16px
+  code-font-size: 16px
+  font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei"
+  code-font-family: '"monospace", monospace'
+# --------------------------- 字体 end ---------------------------
+
+# --------------------------- 背景图片 start ---------------------------
+background:
+  enable: false
+  opacity: .2
+  dark: https://i.pinimg.com/originals/d8/b3/9d/d8b39d12b653810db452c437211aeb2e.png
+  light: https://i.pinimg.com/originals/93/57/38/935738ed9657b296c2ef0ebd2151eb66.jpg
+# --------------------------- 背景图片 end ---------------------------
+
+# --------------------------- 页脚 start ---------------------------
+footer:
+  information:
+    author: https://pan.811520.xyz/2024-10/1728197294016.webp
+    
+  group:
+  randomlink: false
+  license:
+  links:
+    - name: Theme
+      url: https://github.com/everfu/hexo-theme-solitude
+    - name: RSS
+      url: /atom.xml
+# --------------------------- 页脚 end ---------------------------
+
+# --------------------------- 音乐播放器配置 start ---------------------------
+# 音乐胶囊配置 - 使用网易云音乐（底部播放器）
+capsule:
+  enable: true
+  server: netease  # 使用网易云音乐
+  type: playlist
+  volume: 0.6
+  id: 2462294491
+
+# 音乐馆配置 - 使用网易云音乐（独立音乐页面）
+music:
+  enable: true  # 启用音乐馆，提供完整的音乐页面
+  server: netease  # 使用网易云音乐
+  type: playlist
+  volume: 0.6
+  id: 2462294491
+# --------------------------- 音乐播放器配置 end ---------------------------
+
+# 其余配置项（如 comment、search、music、capsule、highlight、katex、pwa、CDN等）可参考官方文档或你原有的配置继续补充

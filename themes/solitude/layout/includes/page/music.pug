@@ -1,0 +1,5 @@
+if theme.music.enable
+  #Music-bg
+  #Music-page
+    if theme.music.server === 'netease'
+      meting-js(id=theme.music.id server=theme.music.server type=theme.music.type mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0" order="random" volume=theme.music.volume)
