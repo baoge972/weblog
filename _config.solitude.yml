@@ -54,7 +54,7 @@ nav:
       Gridea博客: https://bk.baoge.wang/ || anzhiyu-icon-blog
       XAMPP博客: https://xampp.baoge.wang/ || anzhiyu-icon-blog
       RIN博客: https://blog.baoge.wang/ || anzhiyu-icon-blog
-      Notion博客: https://www.653827.xyz/ || anzhiyu-icon-blog
+      Notion博客: https://notion.653827.xyz/ || anzhiyu-icon-blog
       Astro博客: https://astro.baoge.wang/ || anzhiyu-icon-blog
       1pages博客: https://ipages.baoge.x10.mx/ || anzhiyu-icon-blog
       本地博客: https://dfile.baoge.wang/blog.html || anzhiyu-icon-blog
@@ -73,12 +73,12 @@ nav:
       购销存: https://gxc.baoge.wang/ || anzhiyu-icon-tool
       产存供销: https://ccgx.baoge.wang/ || anzhiyu-icon-tool
       电报文件管理: https://cftg.653827.xyz/ || anzhiyu-icon-file
-      webp图床: https://b2.notpeppa.ggff.net/notpeppa || anzhiyu-icon-image
+      #webp图床: https://b2.notpeppa.ggff.net/notpeppa || anzhiyu-icon-image
       缩略图: https://file.baoge.wang/%E6%96%87%E4%BB%B6%E5%A4%B9/slt1 || anzhiyu-icon-image
       链接检测面板: https://file.baoge.wang/lianjiejiance8
       挪车码生成器一: https://ncewm.baoge.wang/
       挪车码生成器二: https://dfile.baoge.wang/%E6%8C%AA%E8%BD%A6%E4%BA%8C%E7%BB%B4%E7%A0%81/%E6%8C%AA%E8%BD%A6%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8.html
-      xugou监控: https://xugou.653827.xyz/monitors || anzhiyu-icon-monitor
+      #xugou监控: https://xugou.653827.xyz/monitors || anzhiyu-icon-monitor
       域名监控: https://ym.baoge.wang/ || anzhiyu-icon-monitor
       VPS到期监控: https://vps.shorten.dpdns.org/ || anzhiyu-icon-monitor
       续订通知: https://tz.653827.xyz/admin || anzhiyu-icon-monitor
@@ -137,17 +137,17 @@ nav:
       LibreTV-ys: https://ys.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
       LibreTV: https://libretv.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
       LibreTV-x: https://libretv-x.baoge.wang/ || https://s3.bmp.ovh/imgs/2025/04/17/d51d8f514bf4ea90.png
-      MoonTV: https://ifxoxfrkkxhm.ap-northeast-1.clawcloudrun.com/ || https://ifxoxfrkkxhm.ap-northeast-1.clawcloudrun.com/favicon.ico
+      MoonTV: https://moontv.baoge.wang/ || https://moontv.baoge.wabg/favicon.ico
       vodg影视: https://vd.loc.cc/ || https://s3.bmp.ovh/imgs/2025/04/19/fa9b145465c4e90e.png
-      老王电影: https://laowang.co/ || https://wp-cdn.4ce.cn/v2/D3rQsvy.jpeg
+      #老王电影: https://laowang.co/ || https://wp-cdn.4ce.cn/v2/D3rQsvy.jpeg
       彩虹工具网: https://tool.cccyun.cc/ || https://s3.bmp.ovh/imgs/2025/03/16/2499eb4888a8aa1a.png
-      懒人找资源: https://lazybook.netlify.app/#/blog/morning?id=%e6%96%b0%e9%97%bb%e6%97%a9%e6%8a%a5 || https://unavatar.io/lazybook.netlify.app
+      #懒人找资源: https://lazybook.netlify.app/#/blog/morning?id=%e6%96%b0%e9%97%bb%e6%97%a9%e6%8a%a5 || https://unavatar.io/lazybook.netlify.app
       科技lion导航: https://dh.kejilion.pro/ || https://s3.bmp.ovh/imgs/2025/08/05/23a28e37262a1eb8.png
       发布页: https://file.baoge.wang/%E6%95%99%E7%A8%8B/%E5%AF%86%E7%A0%81%E9%AA%8C%E8%AF%81%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7?linkData=ISduaSc%2FJ3JqfD1tIGtwcWpvaWtpbzknMSdzZnJqJz8n5Y%2BR5biD6aG1JzEneWZ3bGp5WndxJz8nbXl5dXg%2FNDR8ZnNsM2dmdGxqM3xmc2w0JzEnanNod351eWppVWZ4eHx0d2knPydsa3lxb0JCQicj || https://s3.bmp.ovh/imgs/2025/07/23/dae93b237adc3a0d.png
       AI导航: https://www.aidh.cn/ || https://s3.bmp.ovh/imgs/2025/04/16/1e7a5f1f40584cde.png
       高效问答: https://zaiwen.xueban.org.cn/chat/working-edition || https://s3.bmp.ovh/imgs/2025/08/18/8459910844365c47.webp
       AI仓库: https://ai-cangku.com/ || https://unavatar.io/ai-cangku.com
-      LMarena: https://lmarena.ai/ || https://unavatar.io/lmarena.ai
+      #LMarena: https://lmarena.ai/ || https://unavatar.io/lmarena.ai
     
   right:
     random: false
