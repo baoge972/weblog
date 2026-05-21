@@ -168,7 +168,7 @@ aside:
   # --------------------------- start ---------------------------
   # Tags
   # 标签
-  tags:
+  标签:
     enable: false
     limit: 20 # Number of tags displayed
     # Highlighted tags
@@ -211,7 +211,7 @@ page:
   error: true
   # Tags page
   # 标签页面
-  tags: true
+  标签: true
   # Categories page
   # 分类页面
   categories: true
@@ -220,7 +220,7 @@ page:
   archives: 0
   # Default value
   # 默认值
-  default:
+  默认:
     # Default image when no cover is set
     # 未设置封面时的默认图片
     cover:
@@ -231,7 +231,7 @@ page:
 # Post default settings
 # 文章默认设置
 post:
-  default:
+  默认:
     # Default image when no cover is set
     # 未设置封面时的默认图片
     cover:
@@ -263,7 +263,7 @@ post:
     date: false
     # Update date
     # 更新日期
-    updated: false
+    更新于: false
     # Location
     # 位置
     locate: false
@@ -276,7 +276,7 @@ post:
     pv: false
     # Comment count
     # 评论数
-    comment: false
+    评论: false
   # Reward
   # 打赏
   award:
@@ -341,7 +341,7 @@ theme_color:
 display_mode:
   # auto: automatic switching(Recognize the current theme mode of the device) / dark: dark mode / light: light mode
   # auto: 自动切换（识别设备当前主题模式） / dark: 深色模式 / light: 浅色模式
-  type: auto
+  输入: auto
   # After opening, the dark mode will display the starry sky background
   # 开启后深色模式会显示星空背景
   universe: false
@@ -493,7 +493,7 @@ console:
   card:
     # Tags
     # 标签
-    tags: true
+    标签: true
     # Archives
     # 归档
     archive: "month" # month: by month / year: by year
@@ -585,7 +585,7 @@ errorpage:
 # can only use NetEase Cloud Music, QQ Music and other music platforms supported by the mainland China region,
 # the subsequent consideration of the use of JSON files to store music information and customize the implementation of the third-party API does not depend on the page.
 # Music Page
-meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
+meting_api: "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r" # Custom API
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -594,7 +594,7 @@ meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth
 capsule:
   enable: true
   server: netease
-  type: playlist
+  输入: playlist
   volume: 0.6
   id: 3778678
 # --------------------------- end ---------------------------
